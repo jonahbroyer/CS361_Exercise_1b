@@ -1,26 +1,29 @@
 class Bike
-    # ...
+  def initialize(height, weight)
+    @height = height
+    @weight = weight
   end
+
+end
   
-  class RedBicycle < Bike
-  
-    BIKE_WEIGHT_INCREMENT = 10
-  
-    def initialize(height, weight, color)
-      @height = height
-      @weight = weight
-      @color = color
-    end
-  
-    def get_bike_color
-      @color
-    end
-  
-    def get_bike_height
-      @height
-    end
-  
-    def change_bike_weight
-      @weight -= BIKE_WEIGHT_INCREMENT
-    end
+class ColoredBike < Bike
+
+  WEIGHT_REDUCTION_AMOUNT = 10
+
+  def initialize(height, weight, color)
+    super(height, weight)
+    @color = color
   end
+
+  def color
+    @color
+  end
+
+  def height
+    @height
+  end
+
+  def reduce_weight
+    @weight -= WEIGHT_REDUCTION_AMOUNT
+  end
+end
